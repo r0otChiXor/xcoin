@@ -23,17 +23,6 @@ Proof of stake
     Transaction fees are earned by block finders
 
 
-Proof of work
-
-    Algo: SHA256
-    Block reward: 500 XCO, no halving
-    Max height: 30000 (after this network will not accept PoW)
-    Transaction fees are paid to miners
-
-
-Donate
-Please donate to further developement XQLAnof6ftmMXDTJFKsKrAKUGCb2MtmzLE
-
 Pools
 https://www.ipominer.com/stats?curr=xco
 https://xco.coin-miners.info/
@@ -45,10 +34,34 @@ Windows wallet: https://mega.co.nz/#!mckS1QyC!JfD1SuaKGD0oQEFZPTuJTppy902a2bJ3jO
 Linux wallet: https://mega.co.nz/#!rdkESBBA!2joS-tyHxEnvqw2EaeWDk-5e21wZoXulUJIdcTi_Vlg
 Source: https://github.com/el3ab/xcoin
 
-Exchanges
-Sell or buy XCO for DRK on C-CEX https://c-cex.com/?p=xco-drk
-Sell or buy XCO for BTC on C-CEX https://c-cex.com/?p=xco-btc
-Sell or buy XCO for BTC on Yobit https://yobit.net/en/trade/XCO/BTC
+Linux Build
 
-Games
-Dice game https://yobit.net/en/dice/XCO
+XCoing Build
+
+
+cd src/
+mkdir obj
+
+sudo apt-get update && apt-get upgrade
+sudo apt-get install ntp unzip git build-essential libssl-dev libdb-dev libdb++-dev libboost-all-dev libqrencode-dev aptitude && aptitude install miniupnpc libminiupnpc-dev
+
+cd /xcoin/src/leveldb
+chmod +x build_detect_platform
+make clean
+make libleveldb.a libmemenv.a
+make -f makefile.unix 
+
+//CREATE CONFIG FILE
+nano ~/.Xcoin/Xcoin.conf
+
+Add the following, save and exit:
+
+daemon=1
+server=1
+rpcuser=(username)
+rpcpassword=(strong password)
+
+Run Xcoind once more and if you did everything correctly, 
+your daemon is now online! 
+
+Type XCoingd help for a full list of commands available.
