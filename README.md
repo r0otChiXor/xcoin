@@ -36,32 +36,31 @@ Source: https://github.com/el3ab/xcoin
 
 Linux Build
 
-XCoing Build
 
+    cd src/
+    mkdir obj
 
-cd src/
-mkdir obj
+    sudo apt-get update && apt-get upgrade
+    sudo apt-get install ntp unzip git build-essential libssl-dev libdb-dev libdb++-dev libboost-all-dev libqrencode-dev aptitude &&    aptitude install miniupnpc libminiupnpc-dev
 
-sudo apt-get update && apt-get upgrade
-sudo apt-get install ntp unzip git build-essential libssl-dev libdb-dev libdb++-dev libboost-all-dev libqrencode-dev aptitude && aptitude install miniupnpc libminiupnpc-dev
+    cd /xcoin/src/leveldb
+    chmod +x build_detect_platform
+    make clean
+    make libleveldb.a libmemenv.a
+    make -f makefile.unix 
 
-cd /xcoin/src/leveldb
-chmod +x build_detect_platform
-make clean
-make libleveldb.a libmemenv.a
-make -f makefile.unix 
+CREATE CONFIG FILE
 
-//CREATE CONFIG FILE
-nano ~/.Xcoin/Xcoin.conf
+    nano ~/.Xcoin/Xcoin.conf
 
-Add the following, save and exit:
+    Add the following, save and exit:
 
-daemon=1
-server=1
-rpcuser=(username)
-rpcpassword=(strong password)
+    daemon=1
+    server=1
+    rpcuser=(username)
+    rpcpassword=(strong password)
 
 Run Xcoind once more and if you did everything correctly, 
 your daemon is now online! 
 
-Type XCoingd help for a full list of commands available.
+Type XCoind help for a full list of commands available.
