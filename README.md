@@ -23,19 +23,7 @@ Proof of stake
     Transaction fees are earned by block finders
 
 
-Pools
-https://www.ipominer.com/stats?curr=xco
-https://xco.coin-miners.info/
-https://xco.suprnova.cc
-
-Wallets
-Mac wallet: http://www.mediafire.com/download/2d1m2ib5mb2i3ie/Xcoin-Qt.zip
-Windows wallet: https://mega.co.nz/#!mckS1QyC!JfD1SuaKGD0oQEFZPTuJTppy902a2bJ3jOuBa7TKHtI
-Linux wallet: https://mega.co.nz/#!rdkESBBA!2joS-tyHxEnvqw2EaeWDk-5e21wZoXulUJIdcTi_Vlg
-Source: https://github.com/el3ab/xcoin
-
 Linux Build
-
 
     cd src/
     mkdir obj
